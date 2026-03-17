@@ -1,79 +1,46 @@
-<!DOCTYPE  1
- html><!DOCTYPE html>
-<html>
-<head>
-  <title>ZOVREO Fashion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { margin:0; font-family:Arial; background:#0f172a; color:white; }
-    header { background:#020617; padding:15px; text-align:center; font-size:26px; color:#14b8a6; }
-    .products { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
-    .card { background:#1e293b; padding:15px; border-radius:12px; width:200px; text-align:center; }
-    img { width:100%; height:200px; object-fit:cover; border-radius:10px; }
-    button { margin-top:10px; padding:8px; width:100%; border:none; border-radius:6px; background:#14b8a6; color:white; cursor:pointer; }
-    .cart { position:fixed; right:0; top:0; width:250px; background:#020617; height:100%; padding:15px; overflow:auto; }
-    .cart h2 { text-align:center; }
-  </style>
-</head>
-
-<body>
-
-<header>ZOVREO 🛍️</header>
-
+<!-- sirf products section replace bhi kar sakta hai agar chahe -->
 <div class="products">
 
   <div class="card">
     <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab">
-    <h3>T-Shirt</h3>
+    <h3>Oversized T-Shirt</h3>
     <p>₹499</p>
-    <button onclick="addToCart('T-Shirt',499)">Add to Cart</button>
+    <button onclick="addToCart('Oversized T-Shirt',499)">Add to Cart</button>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1593032465171-8b7d7d8c7c6b">
-    <h3>Jacket</h3>
-    <p>₹1499</p>
-    <button onclick="addToCart('Jacket',1499)">Add to Cart</button>
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    <h3>Casual Shirt</h3>
+    <p>₹799</p>
+    <button onclick="addToCart('Casual Shirt',799)">Add to Cart</button>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
-    <h3>Shoes</h3>
-    <p>₹1999</p>
-    <button onclick="addToCart('Shoes',1999)">Add to Cart</button>
+    <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
+    <h3>Hoodie</h3>
+    <p>₹1199</p>
+    <button onclick="addToCart('Hoodie',1199)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+    <h3>Jeans</h3>
+    <p>₹1299</p>
+    <button onclick="addToCart('Jeans',1299)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10">
+    <h3>Track Pants</h3>
+    <p>₹899</p>
+    <button onclick="addToCart('Track Pants',899)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126">
+    <h3>Formal Shirt</h3>
+    <p>₹999</p>
+    <button onclick="addToCart('Formal Shirt',999)">Add to Cart</button>
   </div>
 
 </div>
-
-<div class="cart">
-  <h2>🛒 Cart</h2>
-  <ul id="cartItems"></ul>
-  <h3>Total: ₹<span id="total">0</span></h3>
-  <button onclick="checkout()">Checkout</button>
-</div>
-
-<script>
-let cart = [];
-let total = 0;
-
-function addToCart(name, price) {
-  cart.push(name + " ₹" + price);
-  total += price;
-
-  let li = document.createElement("li");
-  li.innerText = name + " ₹" + price;
-  document.getElementById("cartItems").appendChild(li);
-
-  document.getElementById("total").innerText = total;
-}
-
-function checkout() {
-  let phone = "919818136424";
-  let message = "Order:\n" + cart.join("\n") + "\nTotal: ₹" + total;
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-  window.open(url, "_blank");
-}
-</script>
-
-</body>
-</html>
